@@ -1,14 +1,12 @@
+import {contador, incrementa, addReset} from "./funcoes.js"
 console.log("oi gente")
 
-let contador = 0
+let tamanho = 38
 let elem = document.getElementById("cxa_num")
-console.log("elem", elem)
+//console.log("elem", elem)
 
 setInterval(() => {
-    contador++
-    if(contador > 59){
-        contador = 0
-    }
+    incrementa(1)
     if (contador < 10){
         elem.innerText = "0" + contador
     }else{
@@ -17,5 +15,6 @@ setInterval(() => {
 },100)
 
 setInterval(() => {
-    elem.style.fontSize++
+    tamanho = tamanho + 10
+    elem.style.fontSize = tamanho + "pt"
 },1000)
